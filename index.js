@@ -1,6 +1,7 @@
 const searchFood=()=>{
     const searchField=document.getElementById('search-field');
     const searchText=searchField.value;
+    document.getElementById('spinner').style.display='block';
     searchField.value='';
     const url=`https://www.themealdb.com/api/json/v1/1/search.php?s=${searchText}`;
 
@@ -31,6 +32,7 @@ const displaySearchResult= meals =>{
         `;
         searchResult.appendChild(div);
     })
+    document.getElementById('spinner').style.display='none';
 }
 
 const loadMealDetail=async mealId=>{
